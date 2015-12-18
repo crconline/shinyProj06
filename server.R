@@ -1,5 +1,6 @@
 library(shiny)
 library(datasets)
+par(bg = "cornsilk")
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
     
@@ -14,7 +15,8 @@ shinyServer(function(input, output) {
         # draw the histogram of mtcars dataset
         hist(mtcars[ ,input$variable],
              main = "Histogram of mtcars variables",
-             xlab = input$variable)
+             xlab = input$variable,
+             col = "lavender")
     })
     
     output$carsSummary <- renderPrint({
